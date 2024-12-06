@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #121212;
+  --foreground: #ededed;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --background: #ededed;
+    --foreground: #121212;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes pulse-solid {
+  0%,
+  100% {
+    background-color: #d1d5db; /* Light gray */
+  }
+  50% {
+    background-color: #9ca3af; /* Darker gray */
+  }
+}
+
+.animate-pulse-solid {
+  animation: pulse-solid 1.5s infinite;
+}
+
+.label {
+  transform: translateY(0px);
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+input:focus + .label,
+input:not(:placeholder-shown) + .label {
+  transform: translateY(-20px);
+  font-size: 0.85rem;
+  opacity: 1;
+  color: #ffffff;
+}
